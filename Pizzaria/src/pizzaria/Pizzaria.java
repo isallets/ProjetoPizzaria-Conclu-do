@@ -84,8 +84,19 @@ public class Pizzaria {
         Pedidos pedidosUP = new Pedidos(1, pedidos2.getPizzas() , cliente2);
         pedidosdao.atualizaPedidos(pedidosUP);
         System.out.println("***Pedido atualizado***\n" + pedidosdao.listarPedidos(1));
-        */
         
+        
+        //listar pedidos por cliente
+        System.out.println("***Pedidos do Cliente***");
+        for (Pedidos pedido : pedidosdao.listarPedidosPorCliente(cliente1)) {
+            System.out.println("\n" + pedido.getCliente()+",\nPedido ID: "+ pedido.getId() + ", \nPizzas: " + pedido.getPizzas());
+        }
+        
+        System.out.println("***Pedidos do Cliente***");
+        for (Pedidos pedido : pedidosdao.listarPedidosPorCliente(cliente2)) {
+            System.out.println("\n" + pedido.getCliente()+",\nPedido ID: "+ pedido.getId() + ", \nPizzas: " + pedido.getPizzas());
+        }
+        */
         
         //cria um data
         LocalDate novaData1 = LocalDate.of(2024, 11, 28);
@@ -102,7 +113,7 @@ public class Pizzaria {
         diatrabalhodao.adicionarDiaTrabalho(diaTrabalho2);
        
         //lista os pedidos de um dia específico
-        System.out.println("***Pedidos do dia***\n" + diaTrabalho2.getData() + ":\n");
+        System.out.println("\n***Pedidos do dia***\n" + diaTrabalho2.getData() + ":\n");
             for (Pedidos pedido : diaTrabalho2.getPedidos()) {
                 System.out.println("\n*Pedidos Completos:*\n" + pedido.getId() + "," + pedido.getPizzas() + "Cliente:" + pedido.getCliente());
         }

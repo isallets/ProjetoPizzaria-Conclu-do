@@ -3,6 +3,7 @@ package PizzariaDao;
 
 import java.util.ArrayList;
 import java.util.List;
+import pizzaria.Cliente;
 import pizzaria.Pedidos;
 
 public class PedidosDao{
@@ -48,6 +49,16 @@ public class PedidosDao{
             report+=p.getCliente()+"\n";
         }
         return report;
+    }
+    
+    public List<Pedidos> listarPedidosPorCliente(Cliente cliente) {
+        List<Pedidos> pedidosDoCliente = new ArrayList<>();
+        for (Pedidos pedido : databasePedidos) {
+            if (pedido.getCliente().getId() == cliente.getId()) {
+                pedidosDoCliente.add(pedido);
+            }
+        }
+        return pedidosDoCliente;
     }
 
 }
