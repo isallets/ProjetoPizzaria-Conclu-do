@@ -9,13 +9,14 @@ import java.util.List;
 public class DiaTrabalho {
     private int id;
     private LocalDate data;
-
+    private List<Pedidos> pedidos;
+    
     public DiaTrabalho(int id, LocalDate data, List<Pedidos> pedidos) {
         this.id = id;
         this.data = data;
         this.pedidos = pedidos;
     }
-    private List<Pedidos> pedidos;
+    
     
     public DiaTrabalho(int id) {
         this.id = id;
